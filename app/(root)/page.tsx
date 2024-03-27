@@ -25,7 +25,6 @@ export default async function Home() {
 				) : (
 					<>
 						{result.threads.map((thread) => {
-							console.log("homepage", thread.community);
 							return (
 								<ThreadCard
 									key={thread._id}

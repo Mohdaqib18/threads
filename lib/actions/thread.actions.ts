@@ -51,45 +51,7 @@ export async function createThread({
 	}
 }
 
-// export async function fetchThreads(pageNumber = 1, pageSize = 20) {
-// 	connectToDB();
 
-// 	//Calculate the number of threads to skip
-
-// 	const skipAmount = (pageNumber - 1) * pageSize;
-
-// 	// fetch the threads that have no parents (top-level threads...)
-// 	const threadsQuery = Thread.find({
-// 		parentId: { $in: [null, undefined] },
-// 	})
-// 		.sort({ createdAt: "desc" })
-// 		.skip(skipAmount)
-// 		.limit(pageSize)
-// 		// This populates the author field in the returned threads with data from the User collection. It fetches and attaches the corresponding User document to each Thread document based on the author field.
-// 		.populate({ path: "author", model: "User" })
-// 		.populate({
-// 			path: "community",
-// 			model: Community,
-// 		})
-// 		.populate({
-// 			path: "children",
-// 			populate: {
-// 				path: "author",
-// 				model: "User",
-// 				select: "_id name parentId image",
-// 			},
-// 		});
-
-// 	const totalThreadsCount = await Thread.countDocuments({
-// 		parentId: { $in: [null, undefined] },
-// 	});
-
-// 	const threads = await threadsQuery.exec();
-
-// 	const isNextPage = totalThreadsCount > skipAmount + threads.length;
-
-// 	return { threads, isNextPage };
-// }
 
 export async function fetchThreads(pageNumber = 1, pageSize = 20) {
 	connectToDB();
