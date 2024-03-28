@@ -96,10 +96,10 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
 			path: pathname,
 		});
 
-		if(pathname === "/profile/edit"){
-			router.back()
-		} else{
-			router.push("/")
+		if (pathname === "/profile/edit") {
+			router.back();
+		} else {
+			router.push("/");
 		}
 	}
 
@@ -118,7 +118,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
 								{field.value ? (
 									<Image
 										src={field.value}
-										alt="profile_photo"
+										alt="profile_icon"
 										width={96}
 										height={96}
 										priority
@@ -127,10 +127,10 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
 								) : (
 									<Image
 										src="/assets/profile.svg"
-										alt="profile_photo"
+										alt="profile_icon"
 										width={24}
 										height={24}
-										className=" object-contain"
+										className="object-contain"
 									/>
 								)}
 							</FormLabel>
@@ -205,7 +205,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
 					)}
 				/>
 				<Button type="submit" className="bg-primary-500">
-					Submit
+					{btnTitle}
 				</Button>
 			</form>
 		</Form>
